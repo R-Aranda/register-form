@@ -3,6 +3,7 @@ import './App.css';
 import RegisterForm from './RegisterForm';
 import RegisterWindow from './RegisterWindow';
 
+
 const App = () => {
   return ( 
     <div className="register-wrapper">
