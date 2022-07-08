@@ -2,21 +2,22 @@
 const errors = (inputs) => {
 
     let errorMessages = {}
+    const validEmail =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     
-    if (inputs.username.trim() == "") {
+    if (!inputs.username.trim()) {
         errorMessages.username = "Username required"
     }
 
-    if (!inputs.email) {
+    if (!inputs.email.trim()) {
         errorMessages.email = "Email required"
-    } else if (!/\S+@\S+\.\S+/.test(inputs.email)) {
+    } else if (!inputs.email.match(validEmail)) {
         errorMessages.email = "Email is invalid"
     }
 
-    if (!inputs.password) {
+    if (!inputs.password.trim()) {
         errorMessages.password = "Password is required"
-    } else if (inputs.password.length < 6) {
-        errorMessages.password = "Password must be at least 6 characters"
+    } else if (inputs.password.length < 8) {
+        errorMessages.password = "Password must be at least 8 characters"
     }
 
     if (!inputs.confirmPassword) {

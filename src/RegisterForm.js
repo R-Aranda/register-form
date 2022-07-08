@@ -30,7 +30,11 @@ const RegisterForm = (props) => {
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		setValidate(errors(inputs))
-		setTallForm(!tallForm)
+		if(tallForm) {
+			return
+		} else {
+			setTallForm(!tallForm)
+		}
 	}
 
   return ( 
@@ -65,7 +69,7 @@ const RegisterForm = (props) => {
 				</div>
 				<div className="form-input-wrapper">
 					<input 
-						type="text"
+						type="password"
 						id="password"
 						className="form-input"
 						name="password"
@@ -77,8 +81,8 @@ const RegisterForm = (props) => {
 				</div>
 				<div className="form-input-wrapper">
 					<input 
-							type="text"
-							id="password-confirmation"
+							type="password"
+							id="confirmPassword"
 							className="form-input"
 							name="confirmPassword"
 							placeholder="Confirm your password"
