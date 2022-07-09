@@ -35,6 +35,12 @@ const RegisterForm = (props) => {
 		} else {
 			setTallForm(!tallForm)
 		}
+
+		if(!errors(inputs)) {
+			setTallForm(tallForm)
+		}
+
+	
 	}
 
   return ( 
